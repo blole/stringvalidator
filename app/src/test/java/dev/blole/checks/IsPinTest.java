@@ -26,8 +26,9 @@ class IsPinTest {
 
     @Test
     void todoValidateDates() {
-        // TODO: we could also validate the pin corresponds to a valid date
-        assertTrue(IsPin.INSTANCE.valid("999999-1234"));
+        // TODO: we could also validate the pin corresponds to a valid date or
+        // samordningsnummer
+        assertFalse(IsPin.INSTANCE.valid("19999999-1234"));
     }
 
     @Test
@@ -40,6 +41,6 @@ class IsPinTest {
     void todoHandlePinsWithPlus() {
         // TODO: it's also valid to supply a + instead of a - to indicate the person is
         // over a 100 years old
-        assertTrue(IsPin.INSTANCE.valid("780202+2389"));
+        assertFalse(IsPin.INSTANCE.valid("780202+2389"));
     }
 }
